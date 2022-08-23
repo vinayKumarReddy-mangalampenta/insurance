@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import './App.css';
+import CarInsurance from "./components/insurance/CarInsurance";
+import HealthInsurance from "./components/insurance/HealthInsurance";
+import LifeInsurance from "./components/insurance/LifeInsurance";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter >
+      <Routes >
+        <Route exact path="/insurance/car" element={<CarInsurance />} ></Route>
+        <Route exact path="/insurance/health" element={<HealthInsurance />} ></Route>
+        <Route exact path="/insurance/life" element={<LifeInsurance />} ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
